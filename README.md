@@ -53,7 +53,9 @@ To run the script, just:
 
 ## Example
 
-An example is provided in the `Example/` folder, with input files. To run the example problem, just: `python opti-script.py 2 Example/dates.csv Example/previous_groups.json`
+An example is provided in the `Example/` folder, with input files. To run the example problem, just:
+
+`python opti-script.py 2 Example/dates.csv Example/previous_groups.json`
 
 ## Misceallenous
 \* Optimization function to minimize is defined as the sum for all groups of the exponential of the sum for each pair perso in a group of the ordinals of the sessions in which they alreay have been in the same group with other members of its group normalized by the ordinal of its last played session. Consequences are the following:
