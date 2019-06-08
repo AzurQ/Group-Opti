@@ -43,7 +43,7 @@ Three inputs are needed:
 
 - `target_number` (int): Target number of people per group
 
-- `path_to_dates.csv` (str): Path to .csv file containing people binary availabilies with rows being people and columns being dates (separators must be ";")
+- `path_to_dates.csv` (str): Path to .csv file containing people binary availabilies with rows being people and columns being dates (separators must be ",")
 
 - `path_to_previous_groups.json` (str) : Path to .json file containing list of previous groups. Format of each previous group in this list must be [n, list] with n being the ordinal number of the session for which this group has been used and list being the list of names.
 

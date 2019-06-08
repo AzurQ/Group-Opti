@@ -48,7 +48,7 @@ def main(target_number, dispo_file_path, previous_groups_file_path):
     ## Read dispo file to generate constraint matrix but also names and dates
     with open(dispo_file, newline='') as csvfile:
         import csv
-        csv = csv.reader(csvfile, delimiter=';')
+        csv = csv.reader(csvfile, delimiter=',')
         header = True
         for row in csv:
             if header:
