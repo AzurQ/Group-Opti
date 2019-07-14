@@ -46,7 +46,7 @@ def main(target_number, dispo_file_path, previous_groups_file_path):
     previous_groups_raw = []
 
     ## Read dispo file to generate constraint matrix but also names and dates
-    with open(dispo_file, newline='') as csvfile:
+    with open(dispo_file) as csvfile:
         import csv
         csv = csv.reader(csvfile, delimiter=',')
         header = True
@@ -160,11 +160,10 @@ def main(target_number, dispo_file_path, previous_groups_file_path):
         problem += sum([x[combi] for combi in combinations if date == combi[0]]) <= 1, "%s can not be used twice"%date
 
     ## Group sizes are as close as possible to target_number - this translates into a number of dates to match
-    if (len(people)/target_number)%1 != 0.5:
+    if (len(people)/float(target_number))%1 != 0.5:
         problem += sum([x[combi] for combi in combinations]) == round(len(people)/target_number), "Group sizes close to targer number"
     else:
-        problem += sum([x[combi] for combi in combinations]) <= int(len(people)/target_number) + 1, "Group sizes close to targer number / low bound"
-        problem += sum([x[combi] for combi in combinations]) >= int(len(people)/target_number), "Group sizes close to targer number / high bound"
+        problem += sum([x[combi] for combi in combinations]) == int(len(people)/target_number) + 1, "Group sizes close to targer number / low bound"
 
 
 
